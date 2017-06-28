@@ -64,3 +64,5 @@ while ix < numberOfDevices:
 fns.makeGraph(xCoords_0V,yCoords_0V,'ro', xCoords_3V, yCoords_3V, 'bo', xCoords_6V, yCoords_6V,'yo', xCoords_9V, yCoords_9V, 'go', contactResistance, sheetResistance, transferLength, contactResistivity)
 
 fns.printTable(contactResistivity, sheetResistance, transferLength, contactResistivity)
+
+fns.showGraph()

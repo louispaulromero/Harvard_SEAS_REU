@@ -179,9 +179,7 @@ def makeGraph(x0,y0,c0, x3, y3, c3, x6, y6, c6, x9, y9, c9, Rc, Rs, Lt, Pc):
 	calculateParameters(slope, intercept, Rc, Rs, Lt, Pc)
 	print '9V slope is', slope
 	print '9V intercept is ', intercept
-	
-	plt.legend()
-	#plt.show()
+	plt.legend(numpoints=1)
 
 def calculateParameters(a, b, Rc, Rs, Lt, Pc):
 	W = 100 #W is hard coded...need to fix this later
@@ -200,3 +198,5 @@ def printTable(Rc, Rs, Lt, Pc):
 	for ix in range(len(Rc)):
 		print str(val)+'V', Rc[ix], '\t',Rs[ix], '\t', Lt[ix],'\t',Pc[ix]
 		val = val + 3
+def showGraph():
+	plt.show()
