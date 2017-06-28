@@ -10,7 +10,6 @@ VDS = []
 xCoordinates = []
 yCoordinates = []
 
-
 #This loads CSV into memory
 with open('NMOS345_AsFab.csv', 'rb') as dataInCSV: 
 		dataAsReader = csv.reader(dataInCSV)
