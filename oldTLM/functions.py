@@ -72,10 +72,11 @@ def calculateResistance(VG, IDS, IG, VDS, ranges, rangeIndex, devID, xC_0V, xC_3
 		gatevoltage = input('Please enter voltage: ')'''
 
 	#ix = 0
+	#MULTIPLY DATA POINT BY WIDTH
 	while start < finish:
 		if VG[start] == '0':
 			resistance_1 = float(VDS[start])/float(IDS[start])
-			yC_0V.append(round(resistance_1, 2))
+			yC_0V.append(round(resistance_1, 2)*150)
 			getDeviceLength(devID, xC_0V,w)
 		elif VG[start] == '3': 
 			#print 'at 3', IDS[start]
@@ -83,15 +84,15 @@ def calculateResistance(VG, IDS, IG, VDS, ranges, rangeIndex, devID, xC_0V, xC_3
 			#print '1',IDS[start]
 			#print '1',VDS[start]
 			resistance_2 = float(VDS[start])/float(IDS[start])
-			yC_3V.append(round(resistance_2, 2))
+			yC_3V.append(round(resistance_2, 2)*150)
 			getDeviceLength(devID, xC_3V,w)
 		elif VG[start] == '6': 
 			resistance_3 = float(VDS[start])/float(IDS[start])
-			yC_6V.append(round(resistance_3, 2))
+			yC_6V.append(round(resistance_3, 2) * 150)
 			getDeviceLength(devID, xC_6V,w)
 		elif VG[start] == '9':
 			resistance_4 = float(VDS[start])/float(IDS[start])
-			yC_9V.append(round(resistance_4, 2))
+			yC_9V.append(round(resistance_4, 2) *150)
 			getDeviceLength(devID, xC_9V,w)
 		start = start + 1
 
@@ -106,6 +107,7 @@ def getDeviceLength(devID, xCoords, width):
 # Postcondition:
 # ********************************************************
 	ix = 0
+	#NO EDOPE3
 	if devID[0:5] == 'EDOP3':
 		deviceCol = int(devID[7])
 		if deviceCol == 1:
@@ -118,7 +120,7 @@ def getDeviceLength(devID, xCoords, width):
 		elif deviceCol == 6: 
 			length = 9
 		elif deviceCol == 8: 
-			length = 12
+			length = 13
 		elif deviceCol == 10:
 			length = 18
 		xCoords.append(length)
